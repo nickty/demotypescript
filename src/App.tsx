@@ -1,9 +1,10 @@
 /** @format */
 
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import InputField from './components/InputField';
+import { Todo } from './model';
 
 // let name: string = 'mizan';
 
@@ -25,9 +26,9 @@ import InputField from './components/InputField';
 
 // let lotsOfPeople : Person[]
 
-let age: number | string;
+// let age: number | string;
 
-let printName: (name: string) => void;
+// let printName: (name: string) => void;
 
 // function printName(name: string) {
 //   console.log(name);
@@ -41,11 +42,15 @@ let printName: (name: string) => void;
 // }
 
 const App: React.FC = () => {
+  const [todo, settodo] = useState<string>('');
+
+  const [todos, setTodos] = useState<Todo[]>([]);
+
   return (
     <div className='App'>
       <span className='heading'>Taskify</span>
 
-      <InputField />
+      <InputField todo={todo} settodo={settodo} />
     </div>
   );
 };
