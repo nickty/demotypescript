@@ -1,26 +1,53 @@
+/** @format */
+
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import InputField from './components/InputField';
 
-function App() {
+// let name: string = 'mizan';
+
+// let age: number = 4;
+
+// let hobies: string[];
+
+// let role: [number, string];
+
+// role = [1, 'sk'];
+
+// type Person = {
+//   name: string;
+//   age?: number;
+// };
+// let person: Person = {
+//   name: 'dfjdf',
+// };
+
+// let lotsOfPeople : Person[]
+
+let age: number | string;
+
+let printName: (name: string) => void;
+
+// function printName(name: string) {
+//   console.log(name);
+// }
+
+// printName('name');
+
+// interface Persons extends Person {
+//   name: string;
+//   age?: number;
+// }
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <span className='heading'>Taskify</span>
+
+      <InputField />
     </div>
   );
-}
+};
 
 export default App;
