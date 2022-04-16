@@ -46,11 +46,23 @@ const App: React.FC = () => {
 
   const [todos, setTodos] = useState<Todo[]>([]);
 
+  const handleAdd = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (todo) {
+      setTodos([...todos, { id: Date.now(), todo: todo, isDone: false }]);
+      settodo('');
+    }
+  };
   return (
     <div className='App'>
       <span className='heading'>Taskify</span>
 
-      <InputField todo={todo} settodo={settodo} />
+      <InputField todo={todo} settodo={settodo} handleAdd={handleAdd} />
+
+      {todos.map((t) => (
+        <li>{t.todo}</li>
+      ))}
     </div>
   );
 };
